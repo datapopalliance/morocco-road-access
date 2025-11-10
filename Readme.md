@@ -19,7 +19,7 @@ Transportation accessibility is a crucial factor in equitable development and se
 ---
 
 ## 🗂️ Project Structure
-morocco-road-access/  
+P144-morocco-road-access/  
 ├── Data/ # Input geoparquet, or road network data  
 ├── output/ # output folder  
 ├── Road_Access.ipynb/ # Jupyter notebooks for analysis and map export  
@@ -43,7 +43,7 @@ Code implemented in Python 3.12
 Clone and go to repository
 
 ```
-$ git clone https://github.com/datapopalliance/morocco-road-access.git
+$ git clone https://github.com/datapopalliance/P144-morocco-road-access.git
 $ cd morocco-road-access
 ```
 
