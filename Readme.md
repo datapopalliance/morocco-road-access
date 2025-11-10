@@ -66,4 +66,4 @@ docker run -it --name ors-app -p 8080:8082   -v /home/mikmeh01/ors/ors-config.ym
 
 and then run from Jupyter file "road_access.ipynb"
 
-Here is an example of **[Interactive Map](https://rawcdn.githack.com/Mikmeh01/covid-risk-management/d1452b1c3e63f90215ca4be850747224e3877a4c/chloropeth_TUN.html)** for Morocco that can be generated
+Here is an example of **[Interactive Map](https://rawcdn.githack.com/datapopalliance/morocco-road-access/8b0fc0cc6cecfe5b6c22903c33e3cfe3c85f8c95/enclavement_commune_50.html)** for Morocco that can be generated
