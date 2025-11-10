@@ -14,13 +14,13 @@ Transportation accessibility is a crucial factor in equitable development and se
 - Map and analyze the **road network** across Morocco.
 - Compute **isochrones** (travel time areas) using OpenRouteService.
 - Overlay **population data** to estimate the share of isolated inhabitants.
-- Quantify the **percentage of isolated territories** (e.g., beyond 60-minute access to the nearest major center).
+- Quantify the **percentage of isolated territories** (e.g., beyond 20 minutes walk to the closest all weather road).
 
 ---
 
 ## 🗂️ Project Structure
 P144-morocco-road-access/  
-├── Data/ # Input geoparquet, or road network data  
+├── Data/ # Input geoparquet Morocco boundaries, or road network data  
 ├── output/ # output folder  
 ├── Road_Access.ipynb/ # Jupyter notebooks for analysis and map export  
 ├── src/ # Python scripts and utilities  
@@ -44,7 +44,7 @@ Clone and go to repository
 
 ```
 $ git clone https://github.com/datapopalliance/P144-morocco-road-access.git
-$ cd morocco-road-access
+$ cd P144-morocco-road-access
 ```
 
 Create, activate environment and Install dependancies
@@ -65,6 +65,6 @@ The server can be configured like this (after the replacing the path)
 docker run -it --name ors-app -p 8080:8082   -v /home/mikmeh01/ors/ors-config.yml:/home/ors/config/ors-config.yml   -v /home/mikmeh01/ors/ors-docker/elevation_cache:/home/ors/elevation_cache   -v /home/mikmeh01/ors/ors-docker/graphs:/home/ors/graphs   -v /home/mikmeh01/ors/ors-docker/logs:/home/ors/logs   -v /home/mikmeh01/ors/morocco-latest.osm.pbf:/home/ors/morocco-latest.osm.pbf   -e "JAVA_OPTS=-Xms4g -Xmx8g"   openrouteservice/openrouteservice:latest
 ```
 
-and then run from Jupyter file "road_access.ipynb"
+and then run from Jupyter file "Road_access.ipynb"
 
 Here is an example of **[Interactive Map](https://rawcdn.githack.com/datapopalliance/morocco-road-access/8b0fc0cc6cecfe5b6c22903c33e3cfe3c85f8c95/enclavement_commune_50.html)** for Morocco that can be generated

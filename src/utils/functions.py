@@ -686,16 +686,17 @@ def create_map(gdf, threshold, column_name,line_opacity=0.3):
     >>> m.save("map_enclavement.html")
 
     """
-    gdf = gdf[gdf.Share_enclavée > threshold]
+    gdf_ = gdf.copy()
+    gdf_ = gdf_[gdf_.Share_enclavée > threshold]
 
     # Center map (you can adapt coordinates)
     m = folium.Map(location=[29.16981, -8.79054], zoom_start=6, tiles='cartodbpositron')
-
+    gdf_['Share_enclavée_%'] = gdf_['Share_enclavée'] * 100
     # Add choropleth layer
     choropleth = folium.Choropleth(
-        geo_data=gdf,
-        data=gdf,
-        columns=[column_name, "Share_enclavée"],
+        geo_data=gdf_,
+        data=gdf_,
+        columns=[column_name, "Share_enclavée_%"],
         key_on=f"feature.properties.{column_name}",
         fill_color="YlOrRd",
         fill_opacity=0.9,
@@ -715,7 +716,7 @@ def create_map(gdf, threshold, column_name,line_opacity=0.3):
         # Add interactive tooltips (clickable features)
     if "Multi_Pove" in gdf.columns.unique():
         folium.GeoJson(
-            gdf,
+            gdf_,
             style_function=lambda feature: {
                 'fillColor': 'transparent',
                 'color': 'transparent',
@@ -731,7 +732,7 @@ def create_map(gdf, threshold, column_name,line_opacity=0.3):
         ).add_to(m)
     else:
         folium.GeoJson(
-            gdf,
+            gdf_,
             style_function=lambda feature: {
                 'fillColor': 'transparent',
                 'color': 'transparent',
