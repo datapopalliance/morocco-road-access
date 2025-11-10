@@ -30,7 +30,7 @@ P144-morocco-road-access/
 
 ## 🧠 Methodology
 1. **Data Collection:** Import road and territorial data (e.g., from OpenStreetMap or Moroccan government sources).
-2. **Processing:** Use tools like `GeoPandas`, `Shapely`, and `NetworkX` to analyze accessibility.
+2. **Processing:** Use tools like `GeoPandas`, `Shapely`, and `OpenRouteService` to analyze accessibility.
 3. **Analysis:** Compute isolation metrics such as travel time to nearest all weather roads.
 4. **Visualization:** Plot maps and charts showing isolated areas.
 
